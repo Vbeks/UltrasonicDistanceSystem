@@ -1,0 +1,28 @@
+@startuml
+title MVC Architecture - Ultrasonic Distance System
+
+package "Controller" {
+  class DistanceController {
+    + init()
+    + update()
+  }
+}
+
+package "Model" {
+  class DistanceModel {
+    + getDistance() : float
+  }
+}
+
+package "View" {
+  class LedView {
+    + showSafe()
+    + showWarning()
+    + showDanger()
+  }
+}
+
+DistanceController --> DistanceModel : reads sensor data
+DistanceController --> LedView : updates LEDs
+
+@enduml
