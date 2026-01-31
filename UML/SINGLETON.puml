@@ -1,0 +1,17 @@
+@startuml
+title Singleton Pattern - DistanceModel
+
+class DistanceModel {
+  - instance : DistanceModel*
+  - DistanceModel()
+  + getInstance() : DistanceModel*
+  + init()
+  + getDistance() : float
+}
+
+note right
+Only ONE ultrasonic sensor
+object exists in the system
+end note
+
+@enduml
