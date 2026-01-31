@@ -1,0 +1,24 @@
+@startuml
+title Strategy Pattern - LED Alert Behavior
+
+interface LedStrategy {
+  + show()
+}
+
+class SafeStrategy
+class WarningStrategy
+class DangerStrategy
+
+LedStrategy <|.. SafeStrategy
+LedStrategy <|.. WarningStrategy
+LedStrategy <|.. DangerStrategy
+
+class LedView {
+  - strategy : LedStrategy
+  + setStrategy()
+  + display()
+}
+
+LedView --> LedStrategy
+
+@enduml
